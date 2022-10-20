@@ -35,6 +35,8 @@ int main()
     int x = 0;
     char buffer[10];
 
+
+
     puts("give me the x pos of mandle brot\n");
     fgets(buffer, 10, stdin);
     float x_start = atof(buffer);
@@ -71,8 +73,7 @@ int main()
         }
         //finished the vals
         
-        exit(0);
-        
+                
         //render stuff and do math here
 
     }
