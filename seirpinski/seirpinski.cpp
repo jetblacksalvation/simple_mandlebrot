@@ -40,42 +40,40 @@ int main()
     puts("give me the x pos of mandle brot\n");
     fgets(buffer, 10, stdin);
     float x_start = atof(buffer);
-    strcmp(buffer, " ");
     puts("give me the y pos of mandle brot\n");
     fgets(buffer, 10, stdin);
     float y_start = atof(buffer);
 
 
     while (window.isOpen()) {
-        while (window.pollEvent(event)) {
-            if (event.type == event.Closed) {
-                window.close();
-            }
 
-        }
-        for (float xpos = x_start; xpos <= x_start +800; xpos++) {
+        for (float xpos = x_start; xpos <= x_start + 800; xpos++) {
 
-            for (float ypos = y_start; ypos <= y_start+800; ypos++) {
+            for (float ypos = y_start; ypos <= y_start + 800; ypos++) {
+                while (window.pollEvent(event)) {
+                    if (event.type == event.Closed) {
+                        window.close();
+                    }
 
-
-
-                for (x =0; x < 255 and abs(z) <2; x++) {
-                    z = mandle(z, {  xpos / 800, ypos / 800 });
-                    
-               
                 }
-                pixel.setPosition({ xpos-x_start, ypos-y_start });
-                pixel.setFillColor(sf::Color(x,x,x));
+
+
+                for (x = 0; x < 1000 and abs(z) < 2; x++) {
+                    z = mandle(z, { xpos / 800, ypos / 800 });
+
+
+                }
+                pixel.setPosition({ xpos - x_start, ypos - y_start });
+                pixel.setFillColor(sf::Color(x, x*8, x*16));
                 window.draw(pixel);
                 window.display();
                 z = { 0,0 };
             }
         }
         //finished the vals
-        
-                
+
+
         //render stuff and do math here
 
     }
 }
-
